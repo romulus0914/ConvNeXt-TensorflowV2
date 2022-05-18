@@ -104,8 +104,8 @@ class ConvNeXt(tf.keras.Model):
 
         self._head = tf.keras.Sequential(
             [
-                tf.keras.layers.LayerNormalization(epsilon=1e-6),
                 tf.keras.layers.GlobalAveragePooling2D(),
+                tf.keras.layers.LayerNormalization(epsilon=1e-6),
                 tf.keras.layers.Dense(num_classes)
             ]
         )
